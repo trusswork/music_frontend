@@ -1,0 +1,136 @@
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: #212121;
+    border-bottom: 1px solid #333;
+    position: fixed;
+    z-index: 1002;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logoSec {
+    width: 240px;
+    height: 100%;
+    padding: 0px 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.logoContainer {
+    width: 120px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+}
+.logo {
+    width: 60px;
+    height: 50px;
+    max-width: 100%;
+}
+.menuButton {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+}
+.bars {
+    width: 20px;
+    height: 20px;
+    margin-right: 25px;
+}
+.middle {
+    flex: 1;
+    height: 100%;
+    margin: 0px 20px;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.glSearch {
+   position: relative;
+   width: 100%;
+   max-width: 600px;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+}
+.mobSearchButton {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+.mobSearchButton:active {
+    background-color: #999999;
+}
+.mobSearchButton .searchIcon {
+    width: 20px;
+    height: 20px;
+}
+.searchBtnContainer {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        width: 100%;
+        height: 50px;
+        background-color: #212121;
+        border-bottom: 1px solid #333;
+        position: fixed;
+        z-index: 1002;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logoSec {
+        width: 240px;
+        height: 100%;
+        padding: 0px 25px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .logoContainer {
+        width: 100px;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-decoration: none;
+    }
+    .bars {
+        width: 18px;
+        height: 18px;
+        margin-right: 15px;
+    }
+    .mobSearchButton .searchIcon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
