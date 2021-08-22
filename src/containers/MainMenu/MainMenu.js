@@ -128,28 +128,28 @@ const MainMenu = props => {
                         state: { guest: true, comingFrom: '/explore' } 
                     }}>
                         <img src={guest} className={styles.menuIcon} alt="img"/>
-                        <span className={styles.menuText}>Login as guest</span>
+                        <span className={styles.menuText}>Streamer</span>
                     </NavLink> : null)}
                     <NavLink className={styles.menuItem} activeStyle={{ backgroundColor: '#555' }} to="/explore">
                         <img src={explore} className={styles.menuIcon} alt="img"/>
-                        <span className={styles.menuText}>Explore</span>
+                        <span className={styles.menuText}>login</span>
                     </NavLink>
                     <NavLink className={styles.menuItem} activeStyle={{ backgroundColor: '#555' }} to="/artists">
                         <img src={artist} className={styles.menuIcon} alt="img"/>
-                        <span className={styles.menuText}>Artists</span>
+                        <span className={styles.menuText}>Artist</span>
                     </NavLink>
                     <NavLink className={styles.menuItem} activeStyle={{ backgroundColor: '#555' }} to="/playlists">
                         <img src={playlist} className={styles.menuIcon} alt="img"/>
-                        <span className={styles.menuText}>Playlists</span>
+                        <span className={styles.menuText}>Upload Songs</span>
                     </NavLink>
-                    <NavLink className={styles.menuItem} activeStyle={{ backgroundColor: '#555' }} to="/playlists">
+                    {/* <NavLink className={styles.menuItem} activeStyle={{ backgroundColor: '#555' }} to="/playlists">
                         <img src={createPlaylist} className={styles.menuIcon} alt="img"/>
                         <span className={styles.menuText}>Create playlist</span>
                     </NavLink>
                     <NavLink className={styles.menuItem} activeStyle={{ backgroundColor: '#555' }} to="/uploads">
                         <img src={upload} className={styles.menuIcon} alt="img"/>
                         <span className={styles.menuText}>Upload your songs</span>
-                    </NavLink>
+                    </NavLink> */}
                 </div>
             </React.Fragment>
         );

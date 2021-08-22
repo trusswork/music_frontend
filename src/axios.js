@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'https://heartbeatsproject.online/v1/'
+    baseURL: 'http://localhost:1337'
 });
 
 instance.interceptors.request.use(config => {

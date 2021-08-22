@@ -66,13 +66,13 @@ function SliderAlbum(props) {
                         <div className={styles.imgHolder} style={{backgroundImage: "url("+props.data.imgUrl+")"}}></div>
                     </div>
                     <div className={styles.data}>
-                        <span onClick={(e, url) => openPage(e, `/album/${props.data.id}`)} className={styles.name+" "+(props.data.songIds.includes(props.currentSong.id) ? styles.playing : "")} title={(props.data.songIds.includes(props.currentSong.id) ? "A Song From This Album Is Playing" : "")}>{props.data.name}</span>
+                        <span onClick={(e, url) => openPage(e, `/album/${props.data.id}`)} className={styles.name+" "+(props.data.songIds(props.currentSong.id) ? styles.playing : "")} title={(props.data.songIds.includes(props.currentSong.id) ? "A Song From This Album Is Playing" : "")}>{props.data.name}</span>
                         <span onClick={(e, url) => openPage(e, `/artist/${props.data.artistId}`)} className={styles.secondary}>{props.data.artistName}</span>
                         <span className={styles.secondary} style={{userSelect: "none", cursor: "context-menu", textDecoration: "none"}}>{`${props.data.songIds.length} Songs`}</span>
                     </div>
                 </div>
                 <button className={styles.mobPlay} onClick={playSong}>
-                    {(props.play && props.data.songIds.includes(props.currentSong.id) ? <img src={pause} className={styles.play} /> : <img src={play} className={styles.play} />)}
+                    {(props.play && props.data.songIds(props.currentSong.id) ? <img src={pause} className={styles.play} /> : <img src={play} className={styles.play} />)}
                 </button>
             </div>
         );

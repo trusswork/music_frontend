@@ -26,7 +26,7 @@ class Home extends Component {
     }
     render() {
         let playlists = null;
-        if(this.state.playlists.length > 1) {
+        if( playlists && playlists.length > 1) {
             const restPlaylists = this.state.playlists.filter((_, i) => i !== 0);
             playlists = restPlaylists.map(playlist => {
                 return (
@@ -41,8 +41,8 @@ class Home extends Component {
         }
         else {
             content =<React.Fragment>
-                        <Slider itemType="song" title={this.state.playlists[0].name} items={this.state.playlists[0].songs} playlist={this.state.playlists[0].songIds}/>
-                        <Slider itemType="album" title="New Albums" items={this.state.newAlbums}/>
+                        {/* <Slider itemType="song" title={this.state.playlists[0].name} items={this.state.playlists[0].songs} playlist={this.state.playlists[0].songIds}/>
+                        <Slider itemType="album" title="New Albums" items={this.state.newAlbums}/> */}
                         {playlists}
                     </React.Fragment>
         }
