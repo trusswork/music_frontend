@@ -22,7 +22,7 @@ const SliderSong = props => {
     }
     const playSong = e => {
         if(mousePosition !== e.clientX) return;
-        if(props.currentSong.id == props.data.id && !props.playingFromUploads) {
+        if(props.currentSong.id == props.data.song_id && !props.playingFromUploads) {
             props.setPlay(!props.play);
         }
         else {
@@ -39,22 +39,22 @@ const SliderSong = props => {
         return (
             <div className={styles.container} style={{"width": props.width}}>
                 <div className={styles.SliderSong} style={{
-                    "backgroundImage": `url(${props.data.imgUrl})`,
+                    "backgroundImage": `url(${props.data.song_img_url})`,
                     "MozBoxShadow": "inset 0 -70px 90px 10px"+props.data.imgColor,
                     "WebkitBoxShadow": "inset 0 -70px 90px 10px"+props.data.imgColor,
                     "boxShadow": "inset 0 -70px 90px 10px"+props.data.imgColor
                 }}>
                     <div className={styles.SliderSongModal} onMouseDown={clicked} onMouseUp={playSong}>
                         <Button shape="play">
-                            {(props.currentSong.id == props.data.id && props.play ? <img src={pause} className={styles.playIcon}></img> : <img src={play} className={styles.playIcon}></img>)}
+                            {(props.currentSong.id == props.data.song_id && props.play ? <img src={pause} className={styles.playIcon}></img> : <img src={play} className={styles.playIcon}></img>)}
                         </Button>
                     </div>
                     <div className={styles.songData}>
                         <span className={styles.songName}>
-                            {props.data.name}
+                            {props.data.song_name}
                         </span>
                         <span className={styles.artistName}>
-                            {props.data.artistName}
+                            {props.data.artist_name}
                         </span>
                     </div>
                 </div>
@@ -69,11 +69,11 @@ const SliderSong = props => {
                     <div className={styles.songData}>
                         <div className={styles.mobName} onMouseDown={clicked} onMouseUp={playSong} onTouchStart={clicked} onTouchEnd={playSong}>
                             <span className={styles.songName}>
-                                {props.data.name}
+                                {props.data.song_name}
                             </span>
-                            {(props.currentSong.id == props.data.id && props.play ? <img src={pause} className={styles.playIcon}></img> : <img src={play} className={styles.playIcon}></img>)}
+                            {(props.currentSong.id == props.data.song_id && props.play ? <img src={pause} className={styles.playIcon}></img> : <img src={play} className={styles.playIcon}></img>)}
                         </div>
-                        <Link to={`/artist/${props.data.artistId}`} className={styles.artistName}>
+                        <Link to={`/artist/${props.data.artist_id}`} className={styles.artistName}>
                             {props.data.artistName}
                         </Link>
                     </div>

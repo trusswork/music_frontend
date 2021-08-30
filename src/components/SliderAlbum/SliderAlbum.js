@@ -25,7 +25,7 @@ function SliderAlbum(props) {
             if(mousePosition !== e.clientX) return;
         }
         if(!props.data.songIds.includes(props.currentSong.id)) {
-            props.setTrack({id: props.data.songIds[0], playlist: props.data.songIds, play: true});
+            props.setTrack({id: props.data.songIds[0], playlist: props.data.song_ids, play: true});
         }
         else {
             props.setPlay(!props.play);
@@ -46,13 +46,13 @@ function SliderAlbum(props) {
                     <div className={styles.albumImg}>
                         <div className={styles.imgHolder} style={{backgroundImage: "url("+props.data.imgUrl+")"}}></div>
                         <div className={styles.modal} onMouseDown={clicked} onMouseUp={playSong}>
-                            {(props.play && props.data.songIds.includes(props.currentSong.id) ? <img src={pause} className={styles.play} /> : <img src={play} className={styles.play} />)}
+                            {(props.play && props.data.song_id.includes(props.currentSong.id) ? <img src={pause} className={styles.play} /> : <img src={play} className={styles.play} />)}
                         </div>
                     </div>
                     <div className={styles.data}>
-                        <span onMouseDown={clicked} onMouseUp={(e, url) => openPage(e, `/album/${props.data.id}`)} className={styles.name+" "+(props.data.songIds.includes(props.currentSong.id) ? styles.playing : "")} title={(props.data.songIds.includes(props.currentSong.id) ? "A Song From This Album Is Playing" : "")}>{props.data.name}</span>
-                        <span onMouseDown={clicked} onMouseUp={(e, url) => openPage(e, `/artist/${props.data.artistId}`)} className={styles.secondary}>{props.data.artistName}</span>
-                        <span className={styles.secondary} style={{userSelect: "none", cursor: "context-menu", textDecoration: "none"}}>{`${props.data.songIds.length} Songs`}</span>
+                        <span onMouseDown={clicked} onMouseUp={(e, url) => openPage(e, `/album/${props.data.album_id}`)} className={styles.name+" "+(props.data.songIds.includes(props.currentSong.id) ? styles.playing : "")} title={(props.data.songIds.includes(props.currentSong.id) ? "A Song From This Album Is Playing" : "")}>{props.data.name}</span>
+                        <span onMouseDown={clicked} onMouseUp={(e, url) => openPage(e, `/artist/${props.data.artist_id}`)} className={styles.secondary}>{props.data.artistName}</span>
+                        <span className={styles.secondary} style={{userSelect: "none", cursor: "context-menu", textDecoration: "none"}}>{`${props.data.song_ids.length} Songs`}</span>
                     </div>
                 </div>
             </div>
@@ -66,13 +66,13 @@ function SliderAlbum(props) {
                         <div className={styles.imgHolder} style={{backgroundImage: "url("+props.data.imgUrl+")"}}></div>
                     </div>
                     <div className={styles.data}>
-                        <span onClick={(e, url) => openPage(e, `/album/${props.data.id}`)} className={styles.name+" "+(props.data.songIds(props.currentSong.id) ? styles.playing : "")} title={(props.data.songIds.includes(props.currentSong.id) ? "A Song From This Album Is Playing" : "")}>{props.data.name}</span>
-                        <span onClick={(e, url) => openPage(e, `/artist/${props.data.artistId}`)} className={styles.secondary}>{props.data.artistName}</span>
-                        <span className={styles.secondary} style={{userSelect: "none", cursor: "context-menu", textDecoration: "none"}}>{`${props.data.songIds.length} Songs`}</span>
+                        <span onClick={(e, url) => openPage(e, `/album/${props.data.album_id}`)} className={styles.name+" "+(props.data.song_id(props.currentSong.id) ? styles.playing : "")} title={(props.data.song_id.includes(props.currentSong.id) ? "A Song From This Album Is Playing" : "")}>{props.data.song_name}</span>
+                        <span onClick={(e, url) => openPage(e, `/artist/${props.data.artist_id}`)} className={styles.secondary}>{props.data.artistName}</span>
+                        <span className={styles.secondary} style={{userSelect: "none", cursor: "context-menu", textDecoration: "none"}}>{`${props.data.song_ids.length} Songs`}</span>
                     </div>
                 </div>
                 <button className={styles.mobPlay} onClick={playSong}>
-                    {(props.play && props.data.songIds(props.currentSong.id) ? <img src={pause} className={styles.play} /> : <img src={play} className={styles.play} />)}
+                    {(props.play && props.data.song_id(props.currentSong.id) ? <img src={pause} className={styles.play} /> : <img src={play} className={styles.play} />)}
                 </button>
             </div>
         );
