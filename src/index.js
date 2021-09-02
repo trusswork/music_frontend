@@ -9,7 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 import thunk from 'redux-thunk';
 
-axios.defaults.baseURL = 'http://localhost:8080/trial-api/v1/';
+axios.defaults.baseURL = 'https://heartbeatsproject.online/v1/';
 
 axios.interceptors.request.use(config => {
   if (localStorage.getItem("accessToken") !== null) {
